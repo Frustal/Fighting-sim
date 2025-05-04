@@ -13,10 +13,10 @@ public class NPCContext : MonoBehaviour
 
     private INPCState currentState;
 
-    public event Action<string> OnStateChanged;
-    public event Action OnMove;
-    public event Action OnAttack;
-    public event Action OnDeath;
+    public event Action<string, NPCContext> OnStateChanged;
+    public event Action<NPCContext> OnMove;
+    public event Action<NPCContext> OnAttack;
+    public event Action<NPCContext> OnDeath;
 
     private bool isTakingDamage = false;
 
@@ -37,7 +37,7 @@ public class NPCContext : MonoBehaviour
         currentState?.Enter(this);
 
         // Notify about state change (send state name for example)
-        OnStateChanged?.Invoke(newState.GetType().Name);
+        OnStateChanged?.Invoke(newState.GetType().Name, this);
     }
 
     public Transform FindClosestEnemy()
@@ -70,7 +70,7 @@ public class NPCContext : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, Target.position, MoveSpeed * Time.deltaTime);
 
-        OnMove?.Invoke();
+        OnMove?.Invoke(this);
 
         print("moving");
     }
@@ -87,7 +87,7 @@ public class NPCContext : MonoBehaviour
         {
             targetContext.TakeDamage(10, 0.3f);
 
-            OnAttack?.Invoke();
+            OnAttack?.Invoke(this);
 
             print("attacking");
         }
@@ -113,7 +113,8 @@ public class NPCContext : MonoBehaviour
         {
             ChangeState(new DeadState());
 
-            OnDeath?.Invoke();
+            OnDeath?.Invoke(this);
+
         }
 
         isTakingDamage = false;
@@ -122,6 +123,6 @@ public class NPCContext : MonoBehaviour
     public void Die()
     {
         // Simple death logic
-        Destroy(gameObject);
+        Destroy(gameObject, 3);
     }
 }
