@@ -835,12 +835,12 @@ GameObject:
   - component: {fileID: 558573051}
   - component: {fileID: 558573056}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: npcBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &558573051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,13 +1182,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664760455}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.42225468, z: -0, w: 0.9064773}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 63.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -49.954, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &686283013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291237172}
   - component: {fileID: 1291237171}
+  - component: {fileID: 1291237173}
   m_Layer: 0
   m_Name: protoAnimController
   m_TagString: Untagged
@@ -2057,6 +2058,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291237173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291237170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000ce96223747db4bb6f4b7c9b783c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 919132149155446097, guid: 41e87a4d20170414cbd05b77a6c22996, type: 3}
+  enemyPrefab: {fileID: 4029463528144854274, guid: 6641e7d2ec3fe1f4396ff96094ea5eec, type: 3}
+  numberOfNPCs: 30
+  numberOfEnemies: 30
+  moveSpeed: 5
+  stopDistance: 1
+  spawnArea: 100
 --- !u!1 &1312634929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,12 +2722,12 @@ GameObject:
   - component: {fileID: 1852417668}
   - component: {fileID: 1852417673}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: npcRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1852417668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3196,7 +3216,7 @@ Transform:
   m_GameObject: {fileID: 2082546358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2104864, y: -1.6326311, z: -3.3523674}
+  m_LocalPosition: {x: 0, y: -1.6326311, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
