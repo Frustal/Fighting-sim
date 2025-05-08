@@ -5,13 +5,12 @@ using UnityEngine;
 public class projectAnimController : MonoBehaviour
 {
 
-    private NPCContext[] npcs;
+    [SerializeField] private NPCContext[] npcs;
     private int[] team1; //I'll store IDs of teams in these lists
     private int[] team2;
 
     // Start is called before the first frame update
-    void OnEnable()
-
+    public void AssignNPCS()
     {
         npcs = FindObjectsOfType<NPCContext>();
         for(int i = 0; i < npcs.Length; i++)
@@ -38,12 +37,6 @@ public class projectAnimController : MonoBehaviour
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void DeathEvent(NPCContext npc)

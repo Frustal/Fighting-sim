@@ -4,6 +4,7 @@ public class MoveState : INPCState
     public void Exit(NPCContext context) { }
     public void Update(NPCContext context)
     {
+        /*
         if (context.Target == null)
         {
             context.ChangeState(new SearchState());
@@ -16,5 +17,6 @@ public class MoveState : INPCState
         {
             context.ChangeState(new AttackState());
         }
+        */
     }
 }
