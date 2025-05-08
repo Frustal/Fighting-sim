@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NPCContext : MonoBehaviour
 {
@@ -22,18 +23,22 @@ public class NPCContext : MonoBehaviour
 
     private NPCController controller;
 
+    private static List<NPCContext> damageQueue = new List<NPCContext>();
+    private static List<int> damageAmounts = new List<int>();
+    private static bool processingDamageThisFrame = false;
+
     private void Start()
     {
         ChangeState(new IdleState());
         controller = FindObjectOfType<NPCController>();
     }
 
-    /*
+    
     private void Update()
     {
-        currentState?.Update(this);
+        ProcessDamageQueue();
     }
-    */
+    
 
     public void UpdateStateBasedOnTarget()
     {
@@ -80,10 +85,34 @@ public class NPCContext : MonoBehaviour
 
     public void TakeDamage(int amount, float delay = 0.3f)
     {
-        if (!isTakingDamage)
+        // Queue the damage to be processed in batch
+        damageQueue.Add(this);
+        damageAmounts.Add(amount);
+    }
+
+    public static void ProcessDamageQueue()
+    {
+        if (processingDamageThisFrame) return;
+
+        processingDamageThisFrame = true;
+
+        for (int i = 0; i < damageQueue.Count; i++)
         {
-            StartCoroutine(DelayedDamage(amount, delay));
+            var npc = damageQueue[i];
+            var amount = damageAmounts[i];
+
+            npc.Health -= amount;
+
+            if (npc.Health <= 0)
+            {
+                npc.ChangeState(new DeadState());
+                npc.OnDeath?.Invoke(npc);
+            }
         }
+
+        damageQueue.Clear();
+        damageAmounts.Clear();
+        processingDamageThisFrame = false;
     }
 
     private IEnumerator DelayedDamage(int amount, float delay)

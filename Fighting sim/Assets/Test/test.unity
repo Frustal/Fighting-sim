@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &214085302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f9a1c4c2d195d4b9f407705ce2e8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController: {fileID: 1291237171}
+  animController: {fileID: 0}
   npcPrefab: {fileID: 7283924423260092848, guid: 0e5808ad500539842a79a2d9329c8c42, type: 3}
   enemyPrefab: {fileID: 3926108711793071069, guid: 294ad077d2257cc49b8fee28d77ec4be, type: 3}
   numberOfNPCs: 200
@@ -271,6 +271,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1581549202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &486166185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486166186}
+  - component: {fileID: 486166187}
+  m_Layer: 0
+  m_Name: NPC Unoptimized
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &486166186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486166185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 76.82441, y: -15.212297, z: 9.651093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486166187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486166185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f46a9e0feface43bf3ec0ecb25b1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 1282341179747118477, guid: cbf563bb06a7e2b4d8fcb65bbef41f17, type: 3}
+  teamASize: 2000
+  teamBSize: 2000
+  spawnAreaSize: 50
 --- !u!4 &558573055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3795749716566979074, guid: 0e5808ad500539842a79a2d9329c8c42, type: 3}
@@ -368,7 +416,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1291237170
+--- !u!1 &769273045
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -376,97 +424,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1291237172}
-  - component: {fileID: 1291237171}
+  - component: {fileID: 769273046}
+  - component: {fileID: 769273048}
+  - component: {fileID: 769273047}
   m_Layer: 0
-  m_Name: protoAnimController
+  m_Name: NPC Controller Jobs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1291237171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291237170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a574974e3106fbf42aba3dcb557822d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcs: []
---- !u!4 &1291237172
+--- !u!4 &769273046
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291237170}
+  m_GameObject: {fileID: 769273045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.967916, y: 2.5277154, z: -5.2040687}
+  m_LocalPosition: {x: 76.82441, y: -15.212297, z: 9.651093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1445930140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1445930142}
-  - component: {fileID: 1445930141}
-  m_Layer: 0
-  m_Name: NPCController [Seva]
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1445930141
+--- !u!114 &769273047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445930140}
-  m_Enabled: 1
+  m_GameObject: {fileID: 769273045}
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000ce96223747db4bb6f4b7c9b783c52, type: 3}
+  m_Script: {fileID: 11500000, guid: 49f46a9e0feface43bf3ec0ecb25b1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController: {fileID: 1291237171}
-  npcPrefab: {fileID: 7283924423260092848, guid: 0e5808ad500539842a79a2d9329c8c42, type: 3}
-  enemyPrefab: {fileID: 3926108711793071069, guid: 294ad077d2257cc49b8fee28d77ec4be, type: 3}
-  numberOfNPCs: 100
-  numberOfEnemies: 100
-  moveSpeed: 1
-  stopDistance: 1
-  spawnArea: 10
-  npcTransformsList: []
-  npcContexts: []
---- !u!4 &1445930142
-Transform:
+  npcPrefab: {fileID: 0}
+  teamASize: 2000
+  teamBSize: 2000
+  spawnAreaSize: 50
+--- !u!114 &769273048
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445930140}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.31151, y: -35.974354, z: 5.852264}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 769273045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c6eb1cb98d87e4386e567cf195639b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 1282341179747118477, guid: cbf563bb06a7e2b4d8fcb65bbef41f17, type: 3}
+  teamASize: 2000
+  teamBSize: 2000
+  spawnAreaSize: 50
+  moveSpeed: 2
+  attackRange: 1.5
 --- !u!1 &1581549201
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1581549202
 Transform:
   m_ObjectHideFlags: 0
@@ -500,6 +516,54 @@ Transform:
   - {fileID: 214085303}
   - {fileID: 1852417672}
   - {fileID: 558573055}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1701126756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701126758}
+  - component: {fileID: 1701126757}
+  m_Layer: 0
+  m_Name: NPC Controller [parallel]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1701126757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701126756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e39ea6cb66fe3499baceb9c702f4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 1282341179747118477, guid: cbf563bb06a7e2b4d8fcb65bbef41f17, type: 3}
+  teamASize: 2000
+  teamBSize: 2000
+  spawnAreaSize: 50
+--- !u!4 &1701126758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701126756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36977208, y: 0, z: -53.950947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740448282
@@ -531,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04f6af0a924fe749bfcf08592ba19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController: {fileID: 1291237171}
+  animController: {fileID: 0}
   npcPrefab: {fileID: 7283924423260092848, guid: 0e5808ad500539842a79a2d9329c8c42, type: 3}
   enemyPrefab: {fileID: 3926108711793071069, guid: 294ad077d2257cc49b8fee28d77ec4be, type: 3}
   numberOfNPCs: 100
@@ -796,5 +860,6 @@ SceneRoots:
   - {fileID: 664760458}
   - {fileID: 52116753}
   - {fileID: 2082546362}
-  - {fileID: 1291237172}
-  - {fileID: 1445930142}
+  - {fileID: 1701126758}
+  - {fileID: 486166186}
+  - {fileID: 769273046}
