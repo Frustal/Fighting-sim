@@ -9,6 +9,7 @@ public class NPCContext : MonoBehaviour
     public float AttackRange = 2f;
     public int Health = 100;
     public int TeamID; // 0 or 1
+    public bool CanAttack = false;
 
     private INPCState currentState;
 
@@ -43,7 +44,7 @@ public class NPCContext : MonoBehaviour
         {
             ChangeState(new IdleState());
         }
-        else if (IsInAttackRange())
+        else if (CanAttack)
         {
             ChangeState(new AttackState());
         }
@@ -64,12 +65,6 @@ public class NPCContext : MonoBehaviour
 
         // Notify about state change (send state name for example)
         OnStateChanged?.Invoke(newState.GetType().Name, this);
-    }
-
-    public bool IsInAttackRange()
-    {
-        if (Target == null) return false;
-        return Vector3.Distance(transform.position, Target.position) <= AttackRange;
     }
 
     public void Attack()

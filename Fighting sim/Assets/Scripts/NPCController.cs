@@ -9,6 +9,8 @@ using Unity.Mathematics;
 
 public class NPCController : MonoBehaviour
 {
+    [SerializeField] private projectAnimController animController;
+
     [Header("Setup")]
     public GameObject npcPrefab;
     public GameObject enemyPrefab;
@@ -31,6 +33,9 @@ public class NPCController : MonoBehaviour
     private NativeArray<float3> npcPositionsSnapshot;
     private NativeArray<float3> enemyPositionsSnapshot;
 
+    private NativeArray<byte> npcCanAttackState;
+    private NativeArray<byte> enemyCanAttackState;
+
     [Unity.Burst.BurstCompile] //this is for efficiency. It basically transforms the code to more efficient machine code. It requires the math module tho.
     struct MoveTowardsTargetJob : IJobParallelForTransform
     {
@@ -39,6 +44,8 @@ public class NPCController : MonoBehaviour
         [ReadOnly]public float moveSpeed;
         [ReadOnly]public float deltaTime; // Time.deltaTime from the main thread
         [ReadOnly] public float stopDistanceSq;
+
+        public NativeArray<byte> canAttackStates;
 
         // Execute is called for each item in the TransformAccessArray
         // The index tells us which transform we are currently processing
@@ -62,6 +69,9 @@ public class NPCController : MonoBehaviour
                     closestTargetPosition = targetPos;
                 }
             }
+
+            canAttackStates[index] = (byte)(minDistanceSq <= stopDistanceSq ? 1 : 0);
+
             if (minDistanceSq > stopDistanceSq) //we take squared stopDistance here
             {
                 float3 directionToTarget = math.normalize(closestTargetPosition - currentPosition);
@@ -125,6 +135,13 @@ public class NPCController : MonoBehaviour
         npcPositionsSnapshot = new NativeArray<float3>(numberOfNPCs, Allocator.Persistent);
         enemyPositionsSnapshot = new NativeArray<float3>(numberOfEnemies, Allocator.Persistent);
 
+        npcCanAttackState = new NativeArray<byte>(numberOfNPCs, Allocator.Persistent);
+        enemyCanAttackState = new NativeArray<byte>(numberOfEnemies, Allocator.Persistent);
+
+        for (int i = 0; i < numberOfNPCs; i++) npcCanAttackState[i] = 0;
+        for (int i = 0; i < numberOfEnemies; i++) enemyCanAttackState[i] = 0;
+
+        animController.AssignNPCS();
     }
 
     void Update()
@@ -134,6 +151,7 @@ public class NPCController : MonoBehaviour
         {
             return;
         }
+
 
         JobHandle gatherNpcHandle = default;
         JobHandle gatherEnemyHandle = default;
@@ -162,7 +180,8 @@ public class NPCController : MonoBehaviour
                 targetPositions = enemyPositionsSnapshot, // Get target position on main thread
                 moveSpeed = moveSpeed,
                 deltaTime = Time.deltaTime, // Get delta time on main thread
-                stopDistanceSq = stopDistance * stopDistance 
+                stopDistanceSq = stopDistance * stopDistance,
+                canAttackStates = npcCanAttackState
             };
             moveNpcHandle = moveNpc.Schedule(npcsToMove, combinedGatherHandle);
         }
@@ -175,7 +194,8 @@ public class NPCController : MonoBehaviour
                 targetPositions = npcPositionsSnapshot, // Get target position on main thread
                 moveSpeed = moveSpeed,
                 deltaTime = Time.deltaTime, // Get delta time on main thread
-                stopDistanceSq = stopDistance * stopDistance
+                stopDistanceSq = stopDistance * stopDistance,
+                canAttackStates = enemyCanAttackState
             };
             moveEnemyHandle = moveEnemy.Schedule(enemiesToMove, combinedGatherHandle);
 
@@ -219,27 +239,33 @@ public class NPCController : MonoBehaviour
     void UpdateNPCStates()
     {
         // Check distances and update states for all NPCs
-        foreach (var npc in npcContexts)
+        for (int i = 0; i < npcContexts.Count; i++)
         {
+            var npc = npcContexts[i];
             print("updating");
             if (npc == null) continue;
 
             // Find closest enemy for each NPC
             Transform closestEnemy = FindClosestEnemy(npc.transform, enemyContexts);
             npc.Target = closestEnemy;
+            npc.CanAttack = npcCanAttackState[i] == 1;
 
             // Let the state machine handle state transitions
             npc.UpdateStateBasedOnTarget();
         }
 
-        // Same for enemies
-        foreach (var enemy in enemyContexts)
+        for (int i = 0; i < enemyContexts.Count; i++)
         {
+            var enemy = enemyContexts[i];
+            print("updating");
             if (enemy == null) continue;
 
-            Transform closestNpc = FindClosestEnemy(enemy.transform, npcContexts);
-            enemy.Target = closestNpc;
+            // Find closest enemy for each NPC
+            Transform closestEnemy = FindClosestEnemy(enemy.transform, npcContexts);
+            enemy.Target = closestEnemy;
+            enemy.CanAttack = enemyCanAttackState[i] == 1;
 
+            // Let the state machine handle state transitions
             enemy.UpdateStateBasedOnTarget();
         }
     }
