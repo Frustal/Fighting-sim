@@ -4508,3 +4508,434 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.470 seconds
+Refreshing native plugins compatible for Editor in 5.77 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.930 seconds
+Domain Reload Profiling: 1397ms
+	BeginReloadAssembly (165ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (217ms)
+		LoadAssemblies (300ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (930ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (401ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (291ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 4.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3386 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (33.8 KB). Loaded Objects now: 4093.
+Memory consumption went from 259.3 MB to 259.3 MB.
+Total: 2.686100 ms (FindLiveObjects: 0.273700 ms CreateObjectMapping: 0.214900 ms MarkObjects: 2.142100 ms  DeleteObjects: 0.054900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2220.099255 seconds.
+  path: Assets/npcBlue.prefab
+  artifactKey: Guid(0e5808ad500539842a79a2d9329c8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/npcBlue.prefab using Guid(0e5808ad500539842a79a2d9329c8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c3ca9abcc75c41fd57b4b77d4f354ed') in 0.149372 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 166
+========================================================================
+Received Import Request.
+  Time since last request: 11.906802 seconds.
+  path: Assets/npcBlue.prefab
+  artifactKey: Guid(0e5808ad500539842a79a2d9329c8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/npcBlue.prefab using Guid(0e5808ad500539842a79a2d9329c8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc0393d8dc1ce93e4899403e6a376e0') in 0.066521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 167
+========================================================================
+Received Import Request.
+  Time since last request: 4.932734 seconds.
+  path: Assets/npcRed.prefab
+  artifactKey: Guid(294ad077d2257cc49b8fee28d77ec4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/npcRed.prefab using Guid(294ad077d2257cc49b8fee28d77ec4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb7cf2c5471ba132e9ec6282765e2a6') in 0.064956 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 167
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.501 seconds
+Refreshing native plugins compatible for Editor in 7.21 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.977 seconds
+Domain Reload Profiling: 1475ms
+	BeginReloadAssembly (177ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (226ms)
+		LoadAssemblies (315ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (978ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (430ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (313ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 5.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3385 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (33.8 KB). Loaded Objects now: 4096.
+Memory consumption went from 261.0 MB to 260.9 MB.
+Total: 2.923100 ms (FindLiveObjects: 0.315500 ms CreateObjectMapping: 0.185600 ms MarkObjects: 2.364500 ms  DeleteObjects: 0.056800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 57.498888 seconds.
+  path: Assets/Blue.mat
+  artifactKey: Guid(1c0f8c55df103504e91a51cbb292fa51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Blue.mat using Guid(1c0f8c55df103504e91a51cbb292fa51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '91e7071cd02bbdca88b42d9280c4f1a5') in 0.153096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Gray_SampleSceneProfile.asset
+  artifactKey: Guid(1c065eddbb065bd458275136563241d9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Gray_SampleSceneProfile.asset using Guid(1c065eddbb065bd458275136563241d9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4bb1f33de1c1d14a9d1212770c5368e9') in 0.030613 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Paladin/Animations/Death.anim
+  artifactKey: Guid(b52cbdc0410348f4e839feae2011c374) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Paladin/Animations/Death.anim using Guid(b52cbdc0410348f4e839feae2011c374) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'eee99973a01709ca173370c01a58dd41') in 0.055247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Green_Prototype.mat
+  artifactKey: Guid(efe26027cacc84b409062a6cff9b90c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Green_Prototype.mat using Guid(efe26027cacc84b409062a6cff9b90c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '528c611b898a67687b43272bfc8d5c12') in 0.022250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Gray_Prototype.mat
+  artifactKey: Guid(21ca8723c11d2d34abf1e9e595b0942a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Gray_Prototype.mat using Guid(21ca8723c11d2d34abf1e9e595b0942a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '062f049b581a1a8756fecc906aa8000c') in 0.022554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Paladin/Animations/Hook.anim
+  artifactKey: Guid(6f2fc1a800609ac4eadb49cb54e8a91f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Paladin/Animations/Hook.anim using Guid(6f2fc1a800609ac4eadb49cb54e8a91f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a74605bc4af955e756dda05bedf7410c') in 0.033369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scalable Grid Prototype Materials/ShaderGraphs/ScaleTilingShader.shadergraph
+  artifactKey: Guid(74686ab863fe0dc4598560e65eb847eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/ShaderGraphs/ScaleTilingShader.shadergraph using Guid(74686ab863fe0dc4598560e65eb847eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6d4149125c1d6282972aaabaaad987fb') in 0.011564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Template Scenes/Dark_SampleScene.unity
+  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Template Scenes/Dark_SampleScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1211d29f22496da8927cb006437ea7fd') in 0.011640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scripts/NPC Brain/MoveState.cs
+  artifactKey: Guid(5f92802f4c22c1f46904c6724424062e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/NPC Brain/MoveState.cs using Guid(5f92802f4c22c1f46904c6724424062e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '12cb52631de3b3faa33a973683c3b749') in 0.015411 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Paladin/Paladin_MAT 1.mat
+  artifactKey: Guid(ea5189a727809904ba7595a5c0078c9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Paladin/Paladin_MAT 1.mat using Guid(ea5189a727809904ba7595a5c0078c9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '77c851c6c33e01e4a7e90ec77ab041e7') in 0.014037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Mantis_Prototype.mat
+  artifactKey: Guid(720ea100b5a5ea741a0e79cfb3ab65c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Mantis_Prototype.mat using Guid(720ea100b5a5ea741a0e79cfb3ab65c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'fc98a466fa93acfcb55a82bcc1ca98ab') in 0.022837 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Textures/1x1_checkerboard.png
+  artifactKey: Guid(bce43503518074f40aaca9d808ac14a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Textures/1x1_checkerboard.png using Guid(bce43503518074f40aaca9d808ac14a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0755b3488c27ef092231b02a7930cd20') in 0.077536 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines.png
+  artifactKey: Guid(1a495c858e010c4438479ff37c318db9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines.png using Guid(1a495c858e010c4438479ff37c318db9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9367564b9ba9269f9dfb37754768f466') in 0.032115 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Dark_Gray_Prototype.mat
+  artifactKey: Guid(2b4f548f427906c468873dfbb5a93fcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Dark_Gray_Prototype.mat using Guid(2b4f548f427906c468873dfbb5a93fcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2e82df75ffc35721ee564eb21e6d6afa') in 0.026077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000140 seconds.
+  path: Assets/npcRed.prefab
+  artifactKey: Guid(294ad077d2257cc49b8fee28d77ec4be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/npcRed.prefab using Guid(294ad077d2257cc49b8fee28d77ec4be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a1c0dd820d74aa1197d517a642f8dd61') in 0.113963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 165
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Blue_SampleSceneProfile.asset
+  artifactKey: Guid(9e21c3fe402bc7b48abf77e866b1fcc3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Blue_SampleSceneProfile.asset using Guid(9e21c3fe402bc7b48abf77e866b1fcc3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '089456764e5b687f34c18f94c99b2694') in 0.020140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Yellow_Prototype.mat
+  artifactKey: Guid(f1e38594f14520c48bc546f3a41f4f56) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Yellow_Prototype.mat using Guid(f1e38594f14520c48bc546f3a41f4f56) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8d0e6c01bb0761e39637de12e6f530ff') in 0.021083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Red_Prototype.mat
+  artifactKey: Guid(6af20d21fdb3e9846be9fcc5368045e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Red_Prototype.mat using Guid(6af20d21fdb3e9846be9fcc5368045e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ee06b21267182c6b9fc9b21cfd087fcb') in 0.024061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Textures/1x1_grid.png
+  artifactKey: Guid(3d0e3f5f772629948810acd3051ba57c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Textures/1x1_grid.png using Guid(3d0e3f5f772629948810acd3051ba57c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b88c7bb3446a592238e56127eed6d604') in 0.028907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Scripts/NPC Brain/INPCState.cs
+  artifactKey: Guid(5a7d89c57a0efec4a8cf62221b3cdca1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/NPC Brain/INPCState.cs using Guid(5a7d89c57a0efec4a8cf62221b3cdca1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '51d677cceab08ba87031be739acdef02') in 0.014700 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Template Scenes/Gray_SampleScene.unity
+  artifactKey: Guid(e731a10608eafd246aa269a3b4922b4f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Template Scenes/Gray_SampleScene.unity using Guid(e731a10608eafd246aa269a3b4922b4f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '420a0b13d83ce5a3677bb972377c241f') in 0.010933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'bb9988339e82fdd1ae4788e96a5153ca') in 0.011150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/npcBlue.prefab
+  artifactKey: Guid(0e5808ad500539842a79a2d9329c8c42) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/npcBlue.prefab using Guid(0e5808ad500539842a79a2d9329c8c42) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4da7f996492b74daa211ac08d6d570fd') in 0.088603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 165
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Violet_Prototype.mat
+  artifactKey: Guid(7ec4e7373ac023f42bc829945cdcdf38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Violet_Prototype.mat using Guid(7ec4e7373ac023f42bc829945cdcdf38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b23cce0c159f7deebab3deb02083ec27') in 0.025056 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/White_Prototype.mat
+  artifactKey: Guid(81caf0b4f4d2ac74e847cad8de1aa792) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/White_Prototype.mat using Guid(81caf0b4f4d2ac74e847cad8de1aa792) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '495966817bf7b3c2b027bf34eea7cb66') in 0.022579 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Orange_Prototype.mat
+  artifactKey: Guid(d78d6cd3137a8824699cde034b4270c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Orange_Prototype.mat using Guid(d78d6cd3137a8824699cde034b4270c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '801c8e5fea62f954e6eb505b859567e0') in 0.023354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scalable Grid Prototype Materials/Materials/Ground/DarkGray_Ground_Prototype.mat
+  artifactKey: Guid(a459023871c8b4241b88c51d8ab759d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scalable Grid Prototype Materials/Materials/Ground/DarkGray_Ground_Prototype.mat using Guid(a459023871c8b4241b88c51d8ab759d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f24edc56ad56595f251e9a86b2eb9f64') in 0.024775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.499 seconds
+Refreshing native plugins compatible for Editor in 5.03 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.957 seconds
+Domain Reload Profiling: 1452ms
+	BeginReloadAssembly (156ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (248ms)
+		LoadAssemblies (320ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (957ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (433ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (320ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 4.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3385 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (33.8 KB). Loaded Objects now: 4099.
+Memory consumption went from 262.9 MB to 262.9 MB.
+Total: 3.173500 ms (FindLiveObjects: 0.286900 ms CreateObjectMapping: 0.221000 ms MarkObjects: 2.618900 ms  DeleteObjects: 0.045600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

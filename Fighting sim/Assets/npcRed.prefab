@@ -1228,6 +1228,7 @@ GameObject:
   - component: {fileID: 693769665969826705}
   - component: {fileID: 1201925403513988455}
   - component: {fileID: 6722179372938337437}
+  - component: {fileID: 1959949617359630381}
   m_Layer: 0
   m_Name: npcRed
   m_TagString: Untagged
@@ -1360,6 +1361,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1959949617359630381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926108711793071069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a574974e3106fbf42aba3dcb557822d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4248973791368316724
 GameObject:
   m_ObjectHideFlags: 0
