@@ -5,11 +5,13 @@ public class SearchState : INPCState
     public void Update(NPCContext context)
     {
         // Find closest enemy
+        /*
         var target = context.FindClosestEnemy();
         if (target != null)
         {
             context.Target = target;
             context.ChangeState(new MoveState());
         }
+        */
     }
 }

@@ -6,7 +6,6 @@ using System.Collections;
 public class NPCContext : MonoBehaviour
 {
     public Transform Target { get; set; }
-    public float MoveSpeed = 3f;
     public float AttackRange = 2f;
     public int Health = 100;
     public int TeamID; // 0 or 1
@@ -20,13 +19,40 @@ public class NPCContext : MonoBehaviour
 
     private bool isTakingDamage = false;
 
+    private NPCController controller;
+
     private void Start()
     {
         ChangeState(new IdleState());
+        controller = FindObjectOfType<NPCController>();
     }
 
+    /*
     private void Update()
     {
+        currentState?.Update(this);
+    }
+    */
+
+    public void UpdateStateBasedOnTarget()
+    {
+
+        if (currentState is DeadState) return;
+
+        if (Target == null)
+        {
+            ChangeState(new IdleState());
+        }
+        else if (IsInAttackRange())
+        {
+            ChangeState(new AttackState());
+        }
+        else
+        {
+            ChangeState(new MoveState());
+            OnMove?.Invoke(this);
+        }
+
         currentState?.Update(this);
     }
 
@@ -38,41 +64,6 @@ public class NPCContext : MonoBehaviour
 
         // Notify about state change (send state name for example)
         OnStateChanged?.Invoke(newState.GetType().Name, this);
-    }
-
-    public Transform FindClosestEnemy()
-    {
-        var npcs = FindObjectsOfType<NPCContext>();
-        float minDist = float.MaxValue;
-        Transform closest = null;
-
-        foreach (var npc in npcs)
-        {
-            if (npc == this) continue;
-            if (npc.TeamID == this.TeamID) continue;
-
-            float dist = Vector3.Distance(transform.position, npc.transform.position);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                closest = npc.transform;
-            }
-
-            print("searching");
-        }
-
-        return closest;
-    }
-
-    public void MoveTowardsTarget()
-    {
-        if (Target == null) return;
-
-        transform.position = Vector3.MoveTowards(transform.position, Target.position, MoveSpeed * Time.deltaTime);
-
-        OnMove?.Invoke(this);
-
-        print("moving");
     }
 
     public bool IsInAttackRange()
@@ -89,7 +80,6 @@ public class NPCContext : MonoBehaviour
 
             OnAttack?.Invoke(this);
 
-            print("attacking");
         }
     }
 
@@ -116,13 +106,14 @@ public class NPCContext : MonoBehaviour
             OnDeath?.Invoke(this);
 
         }
-
+        print("taking damage");
         isTakingDamage = false;
     }
 
     public void Die()
     {
         // Simple death logic
+        controller?.RemoveNPC(this);
         Destroy(gameObject, 3);
     }
 }

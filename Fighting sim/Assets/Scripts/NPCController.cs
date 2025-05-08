@@ -18,8 +18,10 @@ public class NPCController : MonoBehaviour
     public float stopDistance = 1.0f;
     public float spawnArea = 10f; 
 
-    private List<Transform> npcTransformsList = new List<Transform>();
+    [SerializeField] List<Transform> npcTransformsList = new List<Transform>();
     private List<Transform> enemyTransformsList = new List<Transform>();
+    [SerializeField] List<NPCContext> npcContexts = new List<NPCContext>();
+    private List<NPCContext> enemyContexts = new List<NPCContext>();
     private TransformAccessArray npcsToMove;
     private TransformAccessArray enemiesToMove;
     private JobHandle combinedMovementHandle;
@@ -95,12 +97,18 @@ public class NPCController : MonoBehaviour
         {
             GameObject go = Instantiate(npcPrefab, GetRandomSpawnPosition(), Quaternion.identity);
             npcTransformsList.Add(go.transform);
+            var context = go.GetComponent<NPCContext>();
+            context.TeamID = 0;
+            npcContexts.Add(context);
         }
 
         for (int i=0; i < numberOfEnemies; i++)
         {
             GameObject go = Instantiate(enemyPrefab, GetRandomSpawnPosition(), Quaternion.identity);
             enemyTransformsList.Add(go.transform);
+            var context = go.GetComponent<NPCContext>();
+            context.TeamID = 1;
+            enemyContexts.Add(context);
         }
 
         if (npcTransformsList.Count > 0)
@@ -197,6 +205,7 @@ public class NPCController : MonoBehaviour
         combinedMovementHandle.Complete();//only last handle needs to be complete in dependency chain
 
         // Now that the job is complete, the transforms' positions have been updated.
+        UpdateNPCStates();
     }
 
     // Helper to get a random position for spawning
@@ -204,7 +213,103 @@ public class NPCController : MonoBehaviour
     {
         // Simple example: random point on a circle/sphere
         Vector2 randomCircle = UnityEngine.Random.insideUnitCircle * spawnArea;
-        return new Vector3(randomCircle.x, -0.19f, randomCircle.y);
+        return new Vector3(randomCircle.x, 1.46f, randomCircle.y);
+    }
+
+    void UpdateNPCStates()
+    {
+        // Check distances and update states for all NPCs
+        foreach (var npc in npcContexts)
+        {
+            print("updating");
+            if (npc == null) continue;
+
+            // Find closest enemy for each NPC
+            Transform closestEnemy = FindClosestEnemy(npc.transform, enemyContexts);
+            npc.Target = closestEnemy;
+
+            // Let the state machine handle state transitions
+            npc.UpdateStateBasedOnTarget();
+        }
+
+        // Same for enemies
+        foreach (var enemy in enemyContexts)
+        {
+            if (enemy == null) continue;
+
+            Transform closestNpc = FindClosestEnemy(enemy.transform, npcContexts);
+            enemy.Target = closestNpc;
+
+            enemy.UpdateStateBasedOnTarget();
+        }
+    }
+
+    Transform FindClosestEnemy(Transform source, List<NPCContext> potentialTargets)
+    {
+        float minDist = float.MaxValue;
+        Transform closest = null;
+
+        foreach (var target in potentialTargets)
+        {
+            if (target == null) continue;
+
+            float dist = Vector3.Distance(source.position, target.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                closest = target.transform;
+            }
+        }
+
+        return closest;
+    }
+
+    public void RemoveNPC(NPCContext npc)
+    {
+        // Complete any jobs that might be using these transforms
+        combinedMovementHandle.Complete();
+
+        if (npc.TeamID == 0)
+        {
+            // Remove from NPC lists
+            int index = npcContexts.IndexOf(npc);
+            if (index != -1)
+            {
+                npcContexts.RemoveAt(index);
+                npcTransformsList.RemoveAt(index);
+                numberOfNPCs -= 1;
+            }
+        }
+        else
+        {
+            // Remove from Enemy lists
+            int index = enemyContexts.IndexOf(npc);
+            if (index != -1)
+            {
+                enemyContexts.RemoveAt(index);
+                enemyTransformsList.RemoveAt(index);
+                numberOfEnemies -= 1;
+            }
+        }
+
+        RebuildTransformAccessArrays();
+
+        // Rebuild position snapshots if needed
+        if (npcPositionsSnapshot.IsCreated) npcPositionsSnapshot.Dispose();
+        if (enemyPositionsSnapshot.IsCreated) enemyPositionsSnapshot.Dispose();
+        npcPositionsSnapshot = new NativeArray<float3>(numberOfNPCs, Allocator.Persistent);
+        enemyPositionsSnapshot = new NativeArray<float3>(numberOfEnemies, Allocator.Persistent);
+    }
+
+    void RebuildTransformAccessArrays()
+    {
+        // Dispose old ones if they exist
+        if (npcsToMove.isCreated) npcsToMove.Dispose();
+        if (enemiesToMove.isCreated) enemiesToMove.Dispose();
+
+        // Create new ones with current transforms
+        npcsToMove = new TransformAccessArray(npcTransformsList.ToArray());
+        enemiesToMove = new TransformAccessArray(enemyTransformsList.ToArray());
     }
 
     // --- Clean up Native Collections (VERY IMPORTANT!) ---
