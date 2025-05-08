@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NPCContext : MonoBehaviour
 {
@@ -22,18 +23,21 @@ public class NPCContext : MonoBehaviour
 
     private NPCController controller;
 
+    private static List<NPCContext> damageQueue = new List<NPCContext>();
+    private static List<int> damageAmounts = new List<int>();
+    private static bool processingDamageThisFrame = false;
+
+
     private void Start()
     {
         ChangeState(new IdleState());
         controller = FindObjectOfType<NPCController>();
     }
 
-    /*
-    private void Update()
+    private void FixedUpdate()
     {
-        currentState?.Update(this);
+        ProcessDamageQueue();
     }
-    */
 
     public void UpdateStateBasedOnTarget()
     {
@@ -80,29 +84,33 @@ public class NPCContext : MonoBehaviour
 
     public void TakeDamage(int amount, float delay = 0.3f)
     {
-        if (!isTakingDamage)
-        {
-            StartCoroutine(DelayedDamage(amount, delay));
-        }
+        damageQueue.Add(this);
+        damageAmounts.Add(amount);
     }
 
-    private IEnumerator DelayedDamage(int amount, float delay)
+    public static void ProcessDamageQueue()
     {
-        isTakingDamage = true;
+        if (processingDamageThisFrame) return;
 
-        yield return new WaitForSeconds(delay);
+        processingDamageThisFrame = true;
 
-        Health -= amount;
-
-        if (Health <= 0)
+        for (int i = 0; i < damageQueue.Count; i++)
         {
-            ChangeState(new DeadState());
+            var npc = damageQueue[i];
+            var amount = damageAmounts[i];
 
-            OnDeath?.Invoke(this);
+            npc.Health -= amount;
 
+            if (npc.Health <= 0)
+            {
+                npc.ChangeState(new DeadState());
+                npc.OnDeath?.Invoke(npc);
+            }
         }
-        print("taking damage");
-        isTakingDamage = false;
+
+        damageQueue.Clear();
+        damageAmounts.Clear();
+        processingDamageThisFrame = false;
     }
 
     public void Die()
